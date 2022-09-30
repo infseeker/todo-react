@@ -1,7 +1,7 @@
-import ToDo from './ToDo'
+import Todo from './Todo'
 
-export interface ServerData {
-  data: ToDo[];
+export default interface ServerData {
+  data: Todo[];
   message: string;
   code: number;
 }
