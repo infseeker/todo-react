@@ -8,11 +8,11 @@ export default class Service {
     return await fetch(TODO_API_URL).then((r) => r.json());
   }
 
-  static async createTodo(todo: Todo): Promise<ServerData> {
+  static async createTodo(title: string): Promise<ServerData> {
     return await fetch(TODO_API_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ todo }),
+      body: JSON.stringify({ title: title }),
     }).then((r) => r.json());
   }
 
@@ -20,7 +20,7 @@ export default class Service {
     return await fetch(`${TODO_API_URL}/${todo.id}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ todo }),
+      body: JSON.stringify(todo),
     }).then((r) => r.json());
   }
 
@@ -28,7 +28,7 @@ export default class Service {
     return await fetch(`${TODO_API_URL}/${todo.id}`, {
       method: 'DELETE',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ todo }),
+      body: JSON.stringify(todo),
     }).then((r) => r.json());
   }
 }

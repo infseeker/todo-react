@@ -1,5 +1,10 @@
 import { createContext, useContext } from "react";
-import TodoStore from "./store/TodoStore";
+import { configure } from "mobx"
+import TodoStore from "./TodoStore";
+
+configure({
+  enforceActions: "never",
+})
 
 const store = {
   todoStore: new TodoStore(),
