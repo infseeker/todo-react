@@ -9,7 +9,7 @@ export default class App extends Component<{}, {}> {
     return (
       <div className="app">
         <div className="container-sm bg-gray-50 dark bg-gray-900">
-          <div className="card mt-3">
+          <div className="card">
             <div className="card-body">
               <header className="header">
                 <h4>
