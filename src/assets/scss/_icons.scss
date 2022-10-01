@@ -1,0 +1,26 @@
+.bx {
+  width: 1rem;
+  height: 1rem;
+  display: inline-block;
+  line-height: 1;
+  background-size: contain;
+  background-repeat: no-repeat;
+  filter: brightness(0) saturate(100%) invert(51%) sepia(12%) saturate(723%)
+    hue-rotate(171deg) brightness(90%) contrast(85%);
+}
+
+.bx-check-circle {
+  background-image: url('../img/icons/bx-check-circle.svg');
+}
+
+.bx-circle {
+  background-image: url('../img/icons/bx-circle.svg');
+}
+
+.bx-trash-alt {
+  background-image: url('../img/icons/bx-trash-alt.svg');
+}
+
+.bxs-plus-circle {
+  background-image: url('../img/icons/bxs-plus-circle.svg');
+}

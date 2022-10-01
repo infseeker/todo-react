@@ -1,1 +1,104 @@
-@import 'variables'
+@import 'theme/sneat-theme-core.min';
+@import 'theme/sneat-theme-default.min.css';
+@import 'icons';
+
+.container-sm {
+  max-width: 700px;
+
+  .header {
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .todo-form {
+    display: flex;
+    margin-bottom: 1.2rem;
+
+    input {
+      display: inline-block;
+      flex: 2;
+    }
+
+    .todo-form-button {
+      width: 3rem;
+      height: 3rem;
+      margin-left: 0.5rem;
+      cursor: pointer;
+    }
+  }
+
+  .todo-filters {
+    margin-bottom: 1rem;
+
+    ul {
+      display: flex;
+      margin: 0;
+      margin-top: 1rem;
+      padding: 0;
+      justify-content: center;
+      list-style: none;
+
+      li {
+        margin: 0 0.3rem;
+        cursor: pointer;
+
+        &.active {
+          color: #696cff;
+        }
+      }
+    }
+  }
+
+  .todo-list {
+    ul {
+      list-style: none;
+
+      li {
+        display: flex;
+        align-items: center;
+        padding: 0.4rem 0.2rem 0.4rem 0.2rem !important;
+        overflow-x: clip;
+
+        .bx {
+          flex: 0 0 1.6rem;
+          width: 1.6rem;
+          height: 1.6rem;
+          margin-right: 0.3rem;
+          cursor: pointer;
+        }
+
+        .todo-title {
+          box-sizing: border-box;
+          display: block;
+          font-size: 1.2rem;
+          padding: 0.2rem 0.4rem;
+          margin: 0;
+          flex: 1;
+          overflow-wrap: anywhere;
+
+          &.completed {
+            text-decoration: line-through;
+          }
+        }
+      }
+    }
+
+    .todo-empty {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: center;
+      color: #697a8d73;
+      font-size: 1.2rem;
+      text-align: center;
+    }
+  }
+
+  .footer {
+    margin-top: 1.2rem;
+    text-align: center;
+
+    small {
+      opacity: 0.7;
+    }
+  }
+}

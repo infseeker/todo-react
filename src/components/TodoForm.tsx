@@ -8,7 +8,7 @@ const TodoForm = () => {
   const inputRef = useRef<HTMLInputElement>(null);
 
   const addTodo = () => {
-    todoStore.addTodo(title);
+    todoStore.addTodo(title.trim());
     setTitle('');
     inputRef.current?.focus();
   };
@@ -17,8 +17,10 @@ const TodoForm = () => {
     <section className="todo-form">
       <input
         type="text"
+        className="form-control"
         ref={inputRef}
         value={title}
+        placeholder={'What do we do?'}
         onChange={(e) => {
           const value = e.target.value;
           setTitle(value);
@@ -30,9 +32,7 @@ const TodoForm = () => {
         }}
       />
 
-      <button onClick={addTodo}>
-        Add todo
-      </button>
+      <i className="bx bxs-plus-circle todo-form-button" onClick={addTodo}></i>
     </section>
   );
 }

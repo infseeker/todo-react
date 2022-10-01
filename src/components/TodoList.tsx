@@ -12,29 +12,29 @@ const TodoList = () => {
   };
 
   const todoEls = todoStore.filtered.map((todo: Todo) => (
-    <li key={todo.id?.toString()}>
-      <input
-        type="checkbox"
-        defaultChecked={todo.completed}
-        onChange={() => toggleCompleted(todo)}
-        className={todo.completed ? 'completed' : undefined}
-      />
+    <li className="list-group-item" key={todo.id?.toString()}>
+      <i
+        onClick={() => toggleCompleted(todo)}
+        className={`todo-check bx ${todo.completed ? 'bx-check-circle' : 'bx-circle'}`}
+      ></i>
 
-      {todo.title}
+      <span className={`todo-title ${todo.completed ? 'completed' : undefined}`}>{todo.title}</span>
 
-      <button
+      <i className='bx bx-trash-alt'
         onClick={() => {
           todoStore.deleteTodo(todo);
         }}
       >
-        Remove
-      </button>
+      </i>
     </li>
   ));
 
   return (
     <section className="todo-list">
-      <ul>{todoEls}</ul>
+      {todoEls.length === 0 && (
+        <div className="todo-empty">There is nothing here yet</div>
+      )}
+      <ul className="list-group list-group-flush">{todoEls}</ul>
     </section>
   );
 };

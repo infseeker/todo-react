@@ -5,7 +5,7 @@ const TodoFilters = () => {
   const { todoStore } = useStore();
 
   const filters = Object.values(todoStore.Filters).map((filter) => (
-    <span
+    <li
       className={todoStore.currentFilter === filter ? 'active' : undefined}
       key={filter}
       onClick={() => {
@@ -13,10 +13,14 @@ const TodoFilters = () => {
       }}
     >
       {filter}
-    </span>
+    </li>
   ));
 
-  return <section className="todo-filters">{filters}</section>;
+  return (
+    <section className="todo-filters">
+      <ul>{filters}</ul>
+    </section>
+  );
 }
 
 export default observer(TodoFilters);
