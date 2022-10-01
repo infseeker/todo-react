@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import TodoFilters from './components/TodoFilters';
 import TodoForm from './components/TodoForm';
 import TodoList from './components/TodoList';
 
@@ -14,6 +15,7 @@ export default class App extends Component<{}, {}> {
         </header>
 
         <TodoForm />
+        <TodoFilters />
         <TodoList />
 
         <footer className='footer'>Made with React + MobX, Flask and PostgreSQL</footer>

@@ -2,9 +2,29 @@ import { makeAutoObservable, runInAction } from 'mobx';
 import Todo from '../models/Todo';
 import TodoService from '../services/TodoService';
 
+enum Filters {
+  All,
+  Incomplete,
+  Completed
+}
+
 export default class TodoStore {
   todos: Todo[] = [];
-  // isLoading = true;
+
+  readonly Filters = Filters;
+  currentFilter: number = this.Filters.All;
+
+  get all(): Todo[] {
+    return this.todos;
+  }
+
+  get incomplete(): Todo[] {
+    return this.todos.filter(t => !t.completed);
+  }
+
+  get completed(): Todo[] {
+    return this.todos.filter(t => t.completed);
+  }
 
   constructor() {
     makeAutoObservable(this);
