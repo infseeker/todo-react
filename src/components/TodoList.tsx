@@ -11,29 +11,13 @@ const TodoList = () => {
     todoStore.updateTodo(todo);
   };
 
-  let todos: Todo[] = [];
-
-  switch(todoStore.currentFilter) {
-    case todoStore.Filters.All:
-      todos = todoStore.all;
-      break;
-
-    case todoStore.Filters.Incomplete:
-      todos = todoStore.incomplete;
-      break;
-
-    case todoStore.Filters.Completed:
-      todos = todoStore.completed;
-      break;
-  }
-
-  const todoEls = todos.map((todo: Todo) => (
+  const todoEls = todoStore.filtered.map((todo: Todo) => (
     <li key={todo.id?.toString()}>
       <input
         type="checkbox"
         defaultChecked={todo.completed}
         onChange={() => toggleCompleted(todo)}
-        className={todo.completed ? 'completed' : 'incomplete'}
+        className={todo.completed ? 'completed' : undefined}
       />
 
       {todo.title}

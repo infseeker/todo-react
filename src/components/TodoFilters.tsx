@@ -4,19 +4,19 @@ import { useStore } from "../stores/stores"
 const TodoFilters = () => {
   const { todoStore } = useStore();
 
-  return (
-    <section className="todo-filters">
-      <span onClick={() => {
-        todoStore.currentFilter = todoStore.Filters.All;
-      }}>All</span>
-      <span onClick={() => {
-        todoStore.currentFilter = todoStore.Filters.Incomplete;
-      }}>Incomplete</span>
-      <span onClick={() => {
-        todoStore.currentFilter = todoStore.Filters.Completed;
-      }}>Completed</span>
-    </section>
-  );
+  const filters = Object.values(todoStore.Filters).map((filter) => (
+    <span
+      className={todoStore.currentFilter === filter ? 'active' : undefined}
+      key={filter}
+      onClick={() => {
+        todoStore.setFilter(filter);
+      }}
+    >
+      {filter}
+    </span>
+  ));
+
+  return <section className="todo-filters">{filters}</section>;
 }
 
 export default observer(TodoFilters);

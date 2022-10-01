@@ -30,7 +30,7 @@ const TodoForm = () => {
         }}
       />
 
-      <button type="button" onClick={addTodo}>
+      <button onClick={addTodo}>
         Add todo
       </button>
     </section>
