@@ -1,3 +1,3 @@
 # @infseeker React Todo App
 
-Demo: [react.infseeker.tk](https://react.infseeker.tk)
+Demo: [react.infseeker.ru](https://react.infseeker.ru)
