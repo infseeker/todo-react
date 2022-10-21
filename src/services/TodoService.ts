@@ -1,7 +1,7 @@
 import ServerData from '../models/ServerData';
 import Todo from '../models/Todo';
 
-const TODO_API_URL = 'https://infseeker-todo.tk/todo/api/react';
+const TODO_API_URL = 'https://todo.infseeker.ru/api/react';
 
 export default class Service {
   static async getTodos(): Promise<ServerData> {
